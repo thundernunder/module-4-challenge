@@ -10,7 +10,8 @@ var q1CheckB = document.querySelector('#q-1-b');
 var q1CheckC = document.querySelector('#q-1-c');
 // var q1Log = document.querySelector('q-1-log');
 var q1Submit = document.querySelector('#q-1-submit');
-
+var q1Answer = "";
+var secondQuestion = document.querySelector('#question-two');
 var rightAnswer = 0;
 var wrongAnswer = 0;
 var score = document.querySelector('#view-score');
@@ -52,6 +53,7 @@ function questionOne () {
     
     // timer start will go here
     firstQuestion.style.display = 'block';
+    secondQuestion.style.display = 'none';
 
     firstParagraph.textContent = q1.question;
     q1ChoiceA.textContent = q1.choices.a;
@@ -79,9 +81,26 @@ function checkOne() {
         } else if (q1CheckA.checked && q1CheckC.checked) {
             alert('please choose one answer');
         } else {
-
+            if (q1CheckA.checked) {
+                alert("oh, too bad!")
+                // need timer penalty 
+                wrongAnswer++;
+                questionTwo();
+            }
         }
     })
+}
+
+function questionTwo() {
+    // timer start will go here
+    firstQuestion.style.display = 'none';
+
+    firstParagraph.textContent = q1.question;
+    q1ChoiceA.textContent = q1.choices.a;
+    q1ChoiceB.textContent = q1.choices.b;
+    q1ChoiceC.textContent = q1.choices.c;
+
+    checkOne();
 }
 
 
