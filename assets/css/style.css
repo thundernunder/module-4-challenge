@@ -1,0 +1,15 @@
+#question-one {
+    display: none;
+}
+
+.answer-options {
+    list-style-type: none;
+}
+
+.answer-options input:hover {
+    background-color: yellow;
+}
+
+.answer-options input:focus {
+    background-color: yellow;
+}
