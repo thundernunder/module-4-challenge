@@ -1,3 +1,7 @@
 #question-one {
     display: none;
 }
+
+.answer-options {
+    list-style-type: none;
+}

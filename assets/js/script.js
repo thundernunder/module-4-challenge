@@ -2,6 +2,9 @@ var startButton = document.querySelector("#start");
 var startContainer = document.querySelector('#start-container');
 var firstQuestion = document.querySelector("#question-one");
 var firstParagraph = document.querySelector("#q-1-p");
+var firstQuestionChoiceA = document.querySelector('#q-1-a');
+var firstQuestionChoiceB = document.querySelector('#q-1-b');
+var firstQuestionChoiceC = document.querySelector('#q-1-c');
 
 var score = document.querySelector('#view-score');
 var timer;
@@ -10,7 +13,11 @@ var timer;
 
 var q1 = {
     question: "What are the three foundational languages of web development?",
-    choices: ["A. python, c++, javascript", "B. html, css, javascript", "C. html, css, python"], 
+    choices: {
+        a: "A) Python, C++, Javascript", 
+        b: "B) HTML, CSS, Javascript", 
+        c: "C) HTML, CSS, Python"
+    },  
     answer: "B. html, css, javascript"
 }
 
@@ -44,6 +51,9 @@ function questionOne () {
     firstQuestion.style.display = 'block';
 
     firstParagraph.textContent = q1.question;
+    firstQuestionChoiceA.value = q1.choices.a;
+    firstQuestionChoiceB.value = q1.choices.b;
+    firstQuestionChoiceC.value = q1.choices.c;
 }
 
 
