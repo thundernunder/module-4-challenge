@@ -4,6 +4,7 @@
 
 .answer-options {
     list-style-type: none;
+<<<<<<< HEAD
 }
 
 .answer-options button:hover {
@@ -13,3 +14,6 @@
 .answer-options button:focus {
     background-color: yellow;
 }
+=======
+}
+>>>>>>> 1e5d4ec5c2df0e4d3b91e66e0b653bc9da6adff3
