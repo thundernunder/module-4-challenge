@@ -6,10 +6,10 @@
     list-style-type: none;
 }
 
-.answer-options input:hover {
+.answer-options button:hover {
     background-color: yellow;
 }
 
-.answer-options input:focus {
+.answer-options button:focus {
     background-color: yellow;
 }

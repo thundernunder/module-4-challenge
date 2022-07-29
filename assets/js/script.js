@@ -2,11 +2,14 @@ var startButton = document.querySelector("#start");
 var startContainer = document.querySelector('#start-container');
 var firstQuestion = document.querySelector("#question-one");
 var firstParagraph = document.querySelector("#q-1-p");
-var firstQuestionChoiceA = document.querySelector('#q-1-a');
-var firstQuestionChoiceB = document.querySelector('#q-1-b');
-var firstQuestionChoiceC = document.querySelector('#q-1-c');
-var q1Log = document.querySelector('q-1-log');
-// var q1Submit = doucment.querySelector('#q-1-submit');
+var q1ChoiceA = document.querySelector('#q1-a-label');
+var q1ChoiceB = document.querySelector('#q1-b-label');
+var q1ChoiceC = document.querySelector('#q1-c-label');
+var q1CheckA = document.querySelector('#q-1-a');
+var q1CheckB = document.querySelector('#q-1-b');
+var q1CheckC = document.querySelector('#q-1-c');
+// var q1Log = document.querySelector('q-1-log');
+var q1Submit = document.querySelector('#q-1-submit');
 
 var rightAnswer = 0;
 var wrongAnswer = 0;
@@ -56,9 +59,9 @@ function questionOne () {
     firstQuestion.style.display = 'block';
 
     firstParagraph.textContent = q1.question;
-    firstQuestionChoiceA.textContent = q1.choices.a;
-    firstQuestionChoiceB.textContent = q1.choices.b;
-    firstQuestionChoiceC.textContent = q1.choices.c;
+    q1ChoiceA.textContent = q1.choices.a;
+    q1ChoiceB.textContent = q1.choices.b;
+    q1ChoiceC.textContent = q1.choices.c;
 
     checkOne();
 }
@@ -66,26 +69,25 @@ function questionOne () {
 
 
 function checkOne() {
-    firstQuestionChoiceA.onclick = function() {
-        firstQuestionChoiceA === true;
-        console.log(Boolean(firstQuestionChoiceA));
-    }
+    var q1Answer = "";
 
-    firstQuestionChoiceB.onclick = function() {
-        firstQuestionChoiceB === true;
-        console.log(Boolean(firstQuestionChoiceA));
-    }
+    q1Submit.addEventListener('click', function() {
 
-    firstQuestionChoiceC.onclick = function() {
-        firstQuestionChoiceC == true;
-        console.log(Boolean(firstQuestionChoiceA));
-    }
+        var q1Answer = "";
+
+        if (q1CheckA.checked && q1CheckB.checked && q1CheckC.checked) {
+            alert('please choose one answer');
+        } else if (q1CheckA.checked && q1CheckB.checked) {
+            alert('please choose one answer');
+        } else if (q1CheckB.checked && q1CheckC.checked) {
+            alert('please choose one answer');
+        } else if (q1CheckA.checked && q1CheckC.checked) {
+            alert('please choose one answer');
+        } else {
+
+        }
+    })
 }
-
-
-// hopefully statement for next question button 
-// if (Boolean(firstQuestionChoiceA && Boolean(firstQuestionChoiceB && Boolean(firstQuestionChoiceC))) === true)
-// alert("Choose one answer only please");
 
 
 
