@@ -2,7 +2,6 @@ var startButton = document.querySelector("#start");
 var startContainer = document.querySelector('#start-container');
 var firstQuestion = document.querySelector("#question-one");
 var firstParagraph = document.querySelector("#q-1-p");
-<<<<<<< HEAD
 var q1ChoiceA = document.querySelector('#q1-a-label');
 var q1ChoiceB = document.querySelector('#q1-b-label');
 var q1ChoiceC = document.querySelector('#q1-c-label');
@@ -14,12 +13,6 @@ var q1Submit = document.querySelector('#q-1-submit');
 
 var rightAnswer = 0;
 var wrongAnswer = 0;
-=======
-var firstQuestionChoiceA = document.querySelector('#q-1-a');
-var firstQuestionChoiceB = document.querySelector('#q-1-b');
-var firstQuestionChoiceC = document.querySelector('#q-1-c');
-
->>>>>>> 1e5d4ec5c2df0e4d3b91e66e0b653bc9da6adff3
 var score = document.querySelector('#view-score');
 var timer;
 
@@ -48,11 +41,6 @@ var q3 = {
 }
     
 
-       
-
-
-   
-
 startButton.addEventListener('click', function start() {
     if (startContainer.dataset.state === 'visible') {
         startContainer.style.display = 'none';
@@ -61,15 +49,11 @@ startButton.addEventListener('click', function start() {
 }) 
 
 function questionOne () {
-<<<<<<< HEAD
     
-=======
->>>>>>> 1e5d4ec5c2df0e4d3b91e66e0b653bc9da6adff3
     // timer start will go here
     firstQuestion.style.display = 'block';
 
     firstParagraph.textContent = q1.question;
-<<<<<<< HEAD
     q1ChoiceA.textContent = q1.choices.a;
     q1ChoiceB.textContent = q1.choices.b;
     q1ChoiceC.textContent = q1.choices.c;
@@ -100,14 +84,6 @@ function checkOne() {
     })
 }
 
-=======
-    firstQuestionChoiceA.value = q1.choices.a;
-    firstQuestionChoiceB.value = q1.choices.b;
-    firstQuestionChoiceC.value = q1.choices.c;
-}
-
-
->>>>>>> 1e5d4ec5c2df0e4d3b91e66e0b653bc9da6adff3
 
 
 
