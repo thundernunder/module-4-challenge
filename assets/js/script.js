@@ -32,9 +32,11 @@ var q3CheckC = document.querySelector('#q-3-c');
 var q3Submit = document.querySelector('#q-3-submit');
 var q3ScoreButton = document.querySelector('#see-score');
 var q3Answer = "";
+var saveInfoButton = document.querySelector('#save-info');
 var rightAnswer = 0;
 var wrongAnswer = 0;
 var score = document.querySelector('#view-score');
+var userName = document.querySelector('#user-name');
 var userScore = document.querySelector('user-score');
 var timer;
 
@@ -210,7 +212,7 @@ function checkThree() {
                 // need timer penalty 
                 renderScore();
             }
-        } return rightAnswer;
+        }
     })
 }
 
@@ -218,9 +220,23 @@ function renderScore() {
     q3ScoreButton.addEventListener('click', function() {
         thirdQuestion.style.display = 'none';
         score.style.display = 'block';
-        userScore.textContent = rightAnswer;
+        saveInfo();
     })
-
 }
 
+
+function saveInfo() {
+    saveInfoButton.addEventListener("click", function() {
+  
+    var userName = document.querySelector("#user-name").value;
+  
+    if (userName === "") {
+      alert("You don't want people to see your super awesome score?");
+    } else {
+        alert("Thanks for playing!");
+  
+      localStorage.setItem("userName", userName);
+    }
+  });
+}
 
