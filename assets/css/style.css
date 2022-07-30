@@ -4,16 +4,24 @@
 
 .answer-options {
     list-style-type: none;
-<<<<<<< HEAD
 }
 
-.answer-options button:hover {
+.answer-options input:hover {
     background-color: yellow;
 }
 
-.answer-options button:focus {
+.answer-options input:focus {
     background-color: yellow;
 }
-=======
+
+#question-two {
+    display: none;
 }
->>>>>>> 1e5d4ec5c2df0e4d3b91e66e0b653bc9da6adff3
+
+#question-three {
+    display: none;
+}
+
+#view-score {
+    display: none;
+}

@@ -77,10 +77,37 @@
                 
             </section>
 
-            <section id="view-score" style="display: none;">
+            <section id="question-three" data-state = "hidden">
+                
+                <h1>Question Three!</h1>
+            
+                <p id="q-3-p"></p>
+
+                <ul class="answer-options">
+
+                    <li><input type="checkbox" id="q-3-a"></li>
+                    <label id="q3-a-label" for="q-3-a">""</label>
+
+                    <li><input type="checkbox" id="q-3-b"></li>
+                    <label id="q3-b-label" for="q-3-b"></label>
+
+                    <li><input type="checkbox" id="q-3-c"></li>
+                    <label id="q3-c-label" for="q-3-c"></label>
+
+                </ul>
+
+                <p id="q-3-log"></p>
+
+                <button id="q-3-submit">Submit Quiz!</button>
+
+                <button id="see-score">View Your Score!</button>
+                
+            </section>
+
+            <section id="view-score">
                 <div>
                     <h2>View Your Score!</h2>
-                    <p><strong>User:</strong> <span id="user-name"></span></p>
+                    <p><strong>User:</strong><input type="text"> <span id="user-name"></span></p>
                     <br>
                     <p><strong>Score:</strong> <span id="user-score"></span></p>
 

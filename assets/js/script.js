@@ -12,9 +12,30 @@ var q1CheckC = document.querySelector('#q-1-c');
 var q1Submit = document.querySelector('#q-1-submit');
 var q1Answer = "";
 var secondQuestion = document.querySelector('#question-two');
+var secondParagraph = document.querySelector("#q-2-p");
+var q2ChoiceA = document.querySelector('#q2-a-label');
+var q2ChoiceB = document.querySelector('#q2-b-label');
+var q2ChoiceC = document.querySelector('#q2-c-label');
+var q2CheckA = document.querySelector('#q-2-a');
+var q2CheckB = document.querySelector('#q-2-b');
+var q2CheckC = document.querySelector('#q-2-c');
+var q2Submit = document.querySelector('#q-2-submit');
+var thirdQuestion = document.querySelector("#question-three");
+var thirdParagraph = document.querySelector("#q-3-p");
+var q3ChoiceA = document.querySelector('#q3-a-label');
+var q3ChoiceB = document.querySelector('#q3-b-label');
+var q3ChoiceC = document.querySelector('#q3-c-label');
+var q3CheckA = document.querySelector('#q-3-a');
+var q3CheckB = document.querySelector('#q-3-b');
+var q3CheckC = document.querySelector('#q-3-c');
+// var q3Log = document.querySelector('q-3-log');
+var q3Submit = document.querySelector('#q-3-submit');
+var q3ScoreButton = document.querySelector('#see-score');
+var q3Answer = "";
 var rightAnswer = 0;
 var wrongAnswer = 0;
 var score = document.querySelector('#view-score');
+var userScore = document.querySelector('user-score');
 var timer;
 
 
@@ -31,13 +52,21 @@ var q1 = {
 
 var q2 = {
     question: "Which language is primarily used to style webpage elements?", 
-    choices: ["A. javascript", "B. python", "C. css"], 
+    choices: {
+        a: "A) javascript", 
+        b: "B) python", 
+        c: "C) css",
+    }, 
     answer: "C. css"
 }
 
 var q3 = {
     question: "What is the best coding language?", 
-    choices: ["A. python", "B. css", "C. not sure"], 
+    choices: {
+        a: "A) python", 
+        b: "B) css", 
+        c: "C) not sure", 
+    }, 
     answer: "C. not sure"
 }
     
@@ -81,29 +110,117 @@ function checkOne() {
         } else if (q1CheckA.checked && q1CheckC.checked) {
             alert('please choose one answer');
         } else {
-            if (q1CheckA.checked) {
-                alert("oh, too bad!")
-                // need timer penalty 
+            if (q1CheckB.checked) {
+                alert("Nice!")
+                
+                rightAnswer++;
+                questionTwo();
+            } else {
+                alert('bummer!');
                 wrongAnswer++;
+                // need timer penalty 
                 questionTwo();
             }
-        }
+        } return rightAnswer;
     })
 }
 
 function questionTwo() {
     // timer start will go here
     firstQuestion.style.display = 'none';
+    secondQuestion.style.display = 'block';
 
-    firstParagraph.textContent = q1.question;
-    q1ChoiceA.textContent = q1.choices.a;
-    q1ChoiceB.textContent = q1.choices.b;
-    q1ChoiceC.textContent = q1.choices.c;
+    secondParagraph.textContent = q2.question;
+    q2ChoiceA.textContent = q2.choices.a;
+    q2ChoiceB.textContent = q2.choices.b;
+    q2ChoiceC.textContent = q2.choices.c;
 
-    checkOne();
+    checkTwo();
 }
 
+function checkTwo() {
+    var q2Answer = "";
 
+    q2Submit.addEventListener('click', function() {
 
+        var q2Answer = "";
+
+        if (q2CheckA.checked && q2CheckB.checked && q2CheckC.checked) {
+            alert('please choose one answer');
+        } else if (q2CheckA.checked && q2CheckB.checked) {
+            alert('please choose one answer');
+        } else if (q2CheckB.checked && q2CheckC.checked) {
+            alert('please choose one answer');
+        } else if (q2CheckA.checked && q2CheckC.checked) {
+            alert('please choose one answer');
+        } else {
+            if (q2CheckC.checked) {
+                alert("Nice!")
+                
+                rightAnswer++;
+                questionThree();
+            } else {
+                alert('bummer!');
+                wrongAnswer++;
+                // need timer penalty 
+                questionThree();
+            }
+        } return rightAnswer; 
+    })
+}
+
+function questionThree() {
+    // timer start will go here
+    firstQuestion.style.display = 'none';
+    secondQuestion.style.display = 'none';
+    thirdQuestion.style.display = 'block';
+
+    thirdParagraph.textContent = q3.question;
+    q3ChoiceA.textContent = q3.choices.a;
+    q3ChoiceB.textContent = q3.choices.b;
+    q3ChoiceC.textContent = q3.choices.c;
+
+    checkThree();
+}
+
+function checkThree() {
+    var q3Answer = "";
+
+    q3Submit.addEventListener('click', function() {
+
+        var q3Answer = "";
+
+        if (q3CheckA.checked && q3CheckB.checked && q3CheckC.checked) {
+            alert('please choose one answer');
+        } else if (q3CheckA.checked && q3CheckB.checked) {
+            alert('please choose one answer');
+        } else if (q3CheckB.checked && q3CheckC.checked) {
+            alert('please choose one answer');
+        } else if (q3CheckA.checked && q3CheckC.checked) {
+            alert('please choose one answer');
+        } else {
+            if (q3CheckC.checked) {
+                alert("Nice!")
+                
+                rightAnswer++;
+                renderScore();
+            } else {
+                alert('bummer!');
+                wrongAnswer++;
+                // need timer penalty 
+                renderScore();
+            }
+        } return rightAnswer;
+    })
+}
+
+function renderScore() {
+    q3ScoreButton.addEventListener('click', function() {
+        thirdQuestion.style.display = 'none';
+        score.style.display = 'block';
+        userScore.textContent = rightAnswer;
+    })
+
+}
 
 
