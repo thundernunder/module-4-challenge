@@ -25,3 +25,7 @@
 #view-score {
     display: none;
 }
+
+.li-container {
+    display: flex;
+}

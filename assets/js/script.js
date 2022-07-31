@@ -115,11 +115,10 @@ function checkOne() {
             if (q1CheckB.checked) {
                 alert("Nice!")
                 
-                rightAnswer = rightAnswer + 5;
+                rightAnswer = rightAnswer + 1;
                 questionTwo();
             } else {
                 alert('bummer!');
-                wrongAnswer++;
                 // need timer penalty 
                 questionTwo();
             }
@@ -159,12 +158,10 @@ function checkTwo() {
             if (q2CheckC.checked) {
                 alert("Nice!")
                 
-                rightAnswer = rightAnswer + 5;
+                rightAnswer = rightAnswer + 1;
                 questionThree();
             } else {
                 alert('bummer!');
-                wrongAnswer++;
-                // need timer penalty 
                 questionThree();
             }
         } 
@@ -203,14 +200,14 @@ function checkThree() {
         } else {
             if (q3CheckC.checked) {
                 alert("Nice!")
-                rightAnswer = ((rightAnswer + 5)/10) *100;
+                rightAnswer = ((rightAnswer + 1)/3) *100;
                 console.log(rightAnswer);
                 localStorage.setItem("rightAnswer", rightAnswer);
-                niceScore.textContent = "Score: " + (rightAnswer/10) *100 + "%";
+                niceScore.textContent = "Score: " + (rightAnswer) + "%";
                 renderScore();
             } else {
                 alert('bummer!');
-                rightAnswer = ((rightAnswer)/10) *100;
+                rightAnswer = ((rightAnswer)/3) *100;
                 localStorage.setItem("rightAnswer", rightAnswer);
                 renderScore();
             }
