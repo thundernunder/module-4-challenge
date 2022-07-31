@@ -1,3 +1,7 @@
+h1 {
+    color: red;
+}
+
 #high-score {
     display: none;
 }
@@ -10,12 +14,8 @@
     list-style-type: none;
 }
 
-.answer-options input:hover {
-    background-color: yellow;
-}
-
-.answer-options input:focus {
-    background-color: yellow;
+.answer-options li:hover {
+    background-color: lightskyblue;
 }
 
 #question-two {
@@ -26,10 +26,25 @@
     display: none;
 }
 
+section {
+    margin: 0 auto;
+   text-align: center;
+   font-size: 150%;
+   max-width: 500px;
+   background: bisque;
+   border-radius: 5%;
+   font-family: "Helvetica", "Crimson Pro", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
 #view-score {
     display: none;
 }
 
 .li-container {
     display: flex;
+}
+
+button {
+    background-color: white;
+    font-size: 120%;;
 }
