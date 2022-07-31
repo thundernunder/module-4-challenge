@@ -220,19 +220,21 @@ function checkThree() {
                 console.log(rightAnswer);
                 localStorage.setItem("rightAnswer", rightAnswer);
                 niceScore.textContent = "Score: " + (rightAnswer) + "%";
-                renderScore();
+                submitQuiz();
             } else {
                 alert('bummer!');
                 rightAnswer = ((rightAnswer)/3) *100;
                 localStorage.setItem("rightAnswer", rightAnswer);
-                renderScore();
+                submitQuiz();
             }
         } 
     })
 }
 
-function renderScore() {
+function submitQuiz() {
     q3ScoreButton.addEventListener('click', function() {
+        timeLeft = "Nice job!";
+        countdown.style.display = 'none';
         thirdQuestion.style.display = 'none';
         score.style.display = 'block';
         saveInfo();
