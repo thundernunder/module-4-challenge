@@ -1,3 +1,4 @@
+var countdown = document.querySelector('#timer');
 var startButton = document.querySelector("#start");
 var startContainer = document.querySelector('#start-container');
 var firstQuestion = document.querySelector("#question-one");
@@ -39,7 +40,7 @@ var score = document.querySelector('#view-score');
 var userName = document.querySelector('#user-name');
 var niceScore = document.querySelector('#user-score');
 var storedScore = document.querySelector('#high-score');
-var timer;
+var timeLeft = 30;
 
 
 
@@ -78,6 +79,18 @@ startButton.addEventListener('click', function start() {
     if (startContainer.dataset.state === 'visible') {
         startContainer.style.display = 'none';
     }
+    
+    var timerInterval = setInterval(function () {
+        timeLeft--;
+        countdown.textContent = "Time Left: " + timeLeft; 
+
+        if (timeLeft <= 0){
+        clearInterval(timerInterval);
+        alert('Aw man...you ran out of time!');
+        location.reload()
+
+        }}, 1000);
+    
     questionOne();
 }) 
 
@@ -120,6 +133,7 @@ function checkOne() {
                 questionTwo();
             } else {
                 alert('bummer!');
+                timeLeft = timeLeft - 5;
                 // need timer penalty 
                 questionTwo();
             }
@@ -163,6 +177,7 @@ function checkTwo() {
                 questionThree();
             } else {
                 alert('bummer!');
+                timeLeft = timeLeft - 5;
                 questionThree();
             }
         } 
@@ -250,4 +265,6 @@ storedScore.addEventListener('click', function() {
         " Score: " + localStorage.getItem("rightAnswer"));
         
 })
+
+
 
