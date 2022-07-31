@@ -37,7 +37,7 @@ var rightAnswer = 0;
 var wrongAnswer = 0;
 var score = document.querySelector('#view-score');
 var userName = document.querySelector('#user-name');
-var userScore = document.querySelector('user-score');
+var niceScore = document.querySelector('#user-score');
 var timer;
 
 
@@ -115,7 +115,7 @@ function checkOne() {
             if (q1CheckB.checked) {
                 alert("Nice!")
                 
-                rightAnswer++;
+                rightAnswer = rightAnswer + 5;
                 questionTwo();
             } else {
                 alert('bummer!');
@@ -123,7 +123,7 @@ function checkOne() {
                 // need timer penalty 
                 questionTwo();
             }
-        } return rightAnswer;
+        }
     })
 }
 
@@ -159,7 +159,7 @@ function checkTwo() {
             if (q2CheckC.checked) {
                 alert("Nice!")
                 
-                rightAnswer++;
+                rightAnswer = rightAnswer + 5;
                 questionThree();
             } else {
                 alert('bummer!');
@@ -167,7 +167,7 @@ function checkTwo() {
                 // need timer penalty 
                 questionThree();
             }
-        } return rightAnswer; 
+        } 
     })
 }
 
@@ -203,16 +203,18 @@ function checkThree() {
         } else {
             if (q3CheckC.checked) {
                 alert("Nice!")
-                
-                rightAnswer++;
+                rightAnswer = ((rightAnswer + 5)/10) *100;
+                console.log(rightAnswer);
+                localStorage.setItem("rightAnswer", rightAnswer);
+                niceScore.textContent = "Score: " + (rightAnswer/10) *100 + "%";
                 renderScore();
             } else {
                 alert('bummer!');
-                wrongAnswer++;
-                // need timer penalty 
+                rightAnswer = ((rightAnswer)/10) *100;
+                localStorage.setItem("rightAnswer", rightAnswer);
                 renderScore();
             }
-        }
+        } 
     })
 }
 
@@ -229,6 +231,7 @@ function saveInfo() {
     saveInfoButton.addEventListener("click", function() {
   
     var userName = document.querySelector("#user-name").value;
+
   
     if (userName === "") {
       alert("You don't want people to see your super awesome score?");
