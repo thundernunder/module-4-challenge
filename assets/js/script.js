@@ -38,6 +38,7 @@ var wrongAnswer = 0;
 var score = document.querySelector('#view-score');
 var userName = document.querySelector('#user-name');
 var niceScore = document.querySelector('#user-score');
+var storedScore = document.querySelector('#high-score');
 var timer;
 
 
@@ -225,6 +226,8 @@ function renderScore() {
 
 
 function saveInfo() {
+
+    storedScore.style.display = 'block';
     saveInfoButton.addEventListener("click", function() {
   
     var userName = document.querySelector("#user-name").value;
@@ -239,4 +242,12 @@ function saveInfo() {
     }
   });
 }
+
+storedScore.addEventListener('click', function() {
+
+    alert(
+        "Username: " + localStorage.getItem("userName") +
+        " Score: " + localStorage.getItem("rightAnswer"));
+        
+})
 
