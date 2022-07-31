@@ -35,7 +35,7 @@ var score = document.querySelector('#view-score');
 var userName = document.querySelector('#user-name');
 var niceScore = document.querySelector('#user-score');
 var storedScore = document.querySelector('#high-score');
-var timeLeft = 30;
+var timeLeft = 50;
 
 
 
