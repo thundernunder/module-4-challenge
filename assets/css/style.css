@@ -6,6 +6,20 @@ h1 {
     display: none;
 }
 
+section {
+    margin: 0 auto;
+   text-align: center;
+   font-size: 150%;
+   max-width: 500px;
+   background: bisque;
+   border-radius: 5%;
+   font-family: "Helvetica", "Crimson Pro", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#start-container {
+    margin: 10px;
+}
+
 #question-one {
     display: none;
 }
@@ -26,16 +40,6 @@ h1 {
     display: none;
 }
 
-section {
-    margin: 0 auto;
-   text-align: center;
-   font-size: 150%;
-   max-width: 500px;
-   background: bisque;
-   border-radius: 5%;
-   font-family: "Helvetica", "Crimson Pro", 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
 #view-score {
     display: none;
 }
@@ -46,5 +50,6 @@ section {
 
 button {
     background-color: white;
-    font-size: 120%;;
+    font-size: 120%;
+    margin: 5px;
 }

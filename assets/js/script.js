@@ -64,9 +64,9 @@ var q3 = {
     choices: {
         a: "A) python", 
         b: "B) css", 
-        c: "C) not sure", 
+        c: "C) There's a language for everyone", 
     }, 
-    answer: "C. not sure"
+    answer: "C. There's a language for everyone"
 }
     
 
@@ -91,10 +91,8 @@ startButton.addEventListener('click', function start() {
 
 function questionOne () {
     
-    // timer start will go here
     firstQuestion.style.display = 'block';
     secondQuestion.style.display = 'none';
-
     firstParagraph.textContent = q1.question;
     q1ChoiceA.textContent = q1.choices.a;
     q1ChoiceB.textContent = q1.choices.b;
@@ -106,11 +104,8 @@ function questionOne () {
 
 
 function checkOne() {
-    var q1Answer = "";
 
     q1Submit.addEventListener('click', function() {
-
-        var q1Answer = "";
 
         if (q1CheckA.checked && q1CheckB.checked && q1CheckC.checked) {
             alert('please choose one answer');
@@ -129,7 +124,6 @@ function checkOne() {
             } else {
                 alert('bummer!');
                 timeLeft = timeLeft - 5;
-                // need timer penalty 
                 questionTwo();
             }
         }
@@ -137,10 +131,9 @@ function checkOne() {
 }
 
 function questionTwo() {
-    // timer start will go here
+    
     firstQuestion.style.display = 'none';
     secondQuestion.style.display = 'block';
-
     secondParagraph.textContent = q2.question;
     q2ChoiceA.textContent = q2.choices.a;
     q2ChoiceB.textContent = q2.choices.b;
@@ -150,11 +143,8 @@ function questionTwo() {
 }
 
 function checkTwo() {
-    var q2Answer = "";
 
     q2Submit.addEventListener('click', function() {
-
-        var q2Answer = "";
 
         if (q2CheckA.checked && q2CheckB.checked && q2CheckC.checked) {
             alert('please choose one answer');
@@ -180,7 +170,6 @@ function checkTwo() {
 }
 
 function questionThree() {
-    // timer start will go here
     firstQuestion.style.display = 'none';
     secondQuestion.style.display = 'none';
     thirdQuestion.style.display = 'block';
@@ -194,11 +183,8 @@ function questionThree() {
 }
 
 function checkThree() {
-    var q3Answer = "";
 
     q3Submit.addEventListener('click', function() {
-
-        var q3Answer = "";
 
         if (q3CheckA.checked && q3CheckB.checked && q3CheckC.checked) {
             alert('please choose one answer');
@@ -220,6 +206,7 @@ function checkThree() {
                 alert('bummer!');
                 rightAnswer = ((rightAnswer)/3) *100;
                 localStorage.setItem("rightAnswer", rightAnswer);
+                niceScore.textContent = "Score: " + (rightAnswer) + "%";
                 submitQuiz();
             }
         } 
@@ -244,13 +231,11 @@ function saveInfo() {
   
     var userName = document.querySelector("#user-name").value;
 
-  
     if (userName === "") {
       alert("You don't want people to see your super awesome score?");
     } else {
         alert("Thanks for playing!");
-  
-      localStorage.setItem("userName", userName);
+        localStorage.setItem("userName", userName);
     }
   });
 }
@@ -260,8 +245,7 @@ storedScore.addEventListener('click', function() {
     alert(
         "Username: " + localStorage.getItem("userName") +
         " Score: " + localStorage.getItem("rightAnswer"));
-        
-})
+    })
 
 
 

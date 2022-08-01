@@ -1,10 +1,10 @@
-Nathan Underwood - Module 4 Challenge
+👦 Nathan Underwood - Module 4 Challenge
 
-This Challenge gives me the opportunity to build my own coding quiz from scratch.
+This Challenge gives me the opportunity to build my own coding quiz from scratch using HTML, CSS, and Javascript.
 
-Building this password generator allowed me the opporutnity to practice and demonstrate my knowledge of scope. Adhering to rules of scope was the most challenging part of this project. There were many instances of thinkiing I had the code logic and formatting complete, only to find that a variable/function wasn't being called upon because of scope. However, I enjoyed the satisfaction of seeing the generator work when I correctly formatted the code with scope. It took three different .js files, but I'm greatful for this challenge because it forced me to internalize the interworkings of Javascript. I know the information I learned from this assignment about scope will stay with me for future projects in Javascript.
+Building this quiz showcases my ability to use event listeners 👂, timer intervals ⏰, store user information 💾, and more to create a smooth user experience. We've been told in class to "think like a programmer", and I believe the Javascript code in this project shows me starting to take in what that means. The end-user reads top-to-bottom 📗, but a programmer's code should reflect when functionality is firing 🚀 and events are happening. Building code like this makes it easier for the next person to understand what's going on. 
 
-Here is a short video of what the functioning webpage should look like: Password Generator Runthrough
+📼 Here is a short video of what the functioning webpage should look like:
 
 
-Link to the live-site: https://thundernunder.github.io/module-3-challenge/
+🔗 Link to the live-site: 
