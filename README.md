@@ -7,4 +7,4 @@ Building this quiz showcases my ability to use event listeners 👂, timer inter
 📼 Here is a short video of what the functioning webpage should look like: <img src= "https://github.com/thundernunder/module-4-challenge/blob/main/assets/coding-quiz.gif" alt="Coding Quiz Runthrough">
 
 
-🔗 Link to the live-site: 
+🔗 Link to the live-site: https://thundernunder.github.io/module-4-challenge/

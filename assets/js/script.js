@@ -38,7 +38,7 @@ var storedScore = document.querySelector('#high-score');
 var timeLeft = 50;
 
 
-
+// Quiz questions 
 var q1 = {
     question: "What are the three foundational languages of web development?",
     choices: {
@@ -69,7 +69,7 @@ var q3 = {
     answer: "C. There's a language for everyone"
 }
     
-
+// User clicks 'Start Quiz' button after reading description. Question 1 appears, timer starts. 
 startButton.addEventListener('click', function start() {
     if (startContainer.dataset.state === 'visible') {
         startContainer.style.display = 'none';
@@ -89,6 +89,7 @@ startButton.addEventListener('click', function start() {
     questionOne();
 }) 
 
+// Question one appears, opening screen disappears
 function questionOne () {
     
     firstQuestion.style.display = 'block';
@@ -102,7 +103,7 @@ function questionOne () {
 }
 
 
-
+// Check user answer and use info for total score. If wrong, 5 second timer penalty
 function checkOne() {
 
     q1Submit.addEventListener('click', function() {
@@ -130,6 +131,7 @@ function checkOne() {
     })
 }
 
+// Question two appears
 function questionTwo() {
     
     firstQuestion.style.display = 'none';
@@ -142,6 +144,7 @@ function questionTwo() {
     checkTwo();
 }
 
+// Check user answer and use info for total score. If wrong, 5 second timer penalty
 function checkTwo() {
 
     q2Submit.addEventListener('click', function() {
@@ -169,6 +172,7 @@ function checkTwo() {
     })
 }
 
+// Question three appears
 function questionThree() {
     firstQuestion.style.display = 'none';
     secondQuestion.style.display = 'none';
@@ -213,6 +217,7 @@ function checkThree() {
     })
 }
 
+// User submits quiz, timer stops at any value != 0 so placeholder text is used
 function submitQuiz() {
     q3ScoreButton.addEventListener('click', function() {
         timeLeft = "Nice job!";
@@ -223,7 +228,7 @@ function submitQuiz() {
     })
 }
 
-
+// Store user info in local storage for use on next screen
 function saveInfo() {
 
     storedScore.style.display = 'block';
@@ -240,6 +245,7 @@ function saveInfo() {
   });
 }
 
+// Grab Username and Score from local storage to display on-screen 
 storedScore.addEventListener('click', function() {
 
     alert(
